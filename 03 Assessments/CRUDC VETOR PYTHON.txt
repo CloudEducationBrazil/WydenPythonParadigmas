@@ -1,0 +1,21 @@
+Solution - Aplicação
+Implementar um CRUD
+
+C = (Criar/Incluir/Inseriri um registro)
+R = Read (Consultar um registro)
+U = Update (Atualizar o dado de um registro)
+D = Delete (Apagar um registro)
+
+Lista/Vetor (Estrutura de Dados)
+
+Indíces
+      0    1    2     3    4	5
+Elementos
+     16   -18  82    109   75
+     16   -18  82          75 = Deleted (índice)
+     16   -18  17    109   75 = Updated de um element
+     16   -18  82    109   75 = Read Total
+    -18 = Read o element da posição 1
+     16   -18  82    109   75 	54   = Created
+
+
