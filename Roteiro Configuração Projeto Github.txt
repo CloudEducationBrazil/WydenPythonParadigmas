@@ -1,0 +1,32 @@
+
+Roteiro Configuração Projeto Github 
+
+1. Cria conta no github.com (https://github.com)
+2. Doownload / instalar a tool git: https://git-scm.com/downloads
+3. Criar uma pasta no Windows de estudo da disciplina Python (sugestão pasta: DisciplinaPython)
+4. Entrar no modo shell (botão direito do mouse git bash here ou entra no command do DOS CMD)
+5. Confirmar se está dentro da pasta DisciplinaPython
+6. git init (vai cria um ponteiro da pasta)
+7. git add . (Incluir todos os aqruivos no HEAD do repositório GIT Local)
+8. git commit -m "Disciplina Python"
+
+PAUSA....
+
+9. Entrar no repositório github com seu login e senha
+10. Criar um projeto no github na opção NEW
+
+11. git remote add origin https://github.com/CloudEducationBrazil/TESTEPYTHON.git   (associar o seu repositório LOCAL com o REMOTO)
+
+Criei um exemplo de projeto TESTEPYTHON
+
+echo "# TESTEPYTHON" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/CloudEducationBrazil/TESTEPYTHON.git
+git push -u origin master
+
+12. git push -u origin master (sincronizar o repositório LOCAL com o repositório REMOTO)
+
+Nota: git status (exibir se existe algo pendente)
