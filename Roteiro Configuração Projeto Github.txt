@@ -1,3 +1,10 @@
+Downloads:
+
+- Controle de Versão Git
+https://git-scm.com/downloads
+
+- IDE - Desenvolvimento soluções Python
+https://code.visualstudio.com/download
 
 Roteiro Configuração Projeto Github 
 
