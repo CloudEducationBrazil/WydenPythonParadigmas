@@ -1,0 +1,16 @@
+Tipagem (Característica de Linguagens de Programação)
+
+- Forte
+Ex.:
+ int idade;
+ idade = 18;
+ idade = "maria"; // erro 
+ print (idade);
+
+- Fraca	(conversão implicita - inferência)
+Ex.:
+ int idade = 18;
+ idade = 27.9; // Float (ponto flutuante)
+ // Na memória pega 27.9 converte para inteiro, armazena na variável idade = 27
+ print (idade);
+
