@@ -1,0 +1,21 @@
+Paradigma de programação
+orientada a objetos
+Interpretada
+
+Projeto de Pesquisa Científica
+Data Sciense
+Jogos 
+Pequenos app
+
+vantagens
+Alto nível
+sintaxe básica / escrita fácil
+
+Desvantagens
+Díficil debug por conta das variaveis
+do tipo string sem definir tipo
+
+tipagem forte ou fraca?
+
+trades off
+memória x desempenho
