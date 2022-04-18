@@ -1,0 +1,62 @@
+Q1.
+Você foi contratado para fazer os cálculos para o dono de uma Delicatessen.
+
+A Delicatessen Boutique do Pão vende pães mandioquinha e salgados diversos por dia. 
+Cada unidade de pão mandioquinha custa R$ 1,85 e a unidade de salgado custa R$ 2,78.
+
+No final do dia, o dono quer saber quanto arrecadou com a venda destes produtos 
+e caso o faturamento, ou seja, total de vendas, seja superior a R$3.250,00,
+quanto deve aplicar numa conta investimento (15% do total faturado).
+
+Com base nestes fatos, faça um programa em Python calcular e imprimir 
+os dados solicitados. 
+
+Q2. 
+Seu gerente de projetos solicitou que você elaborasse um programa em Python, para 
+que o dono do food truck informe a quantidade de sanduíches gourmet a fazer, 
+
+e o programa calcule e imprima as quantidades (em quilos) de queijo, presunto 
+e carne de fraldinha serão necessários para compra.
+
+Um food truck vende somente um tipo de sanduíche gourmet, 
+cujo recheio acrescenta três fatias de queijo, duas fatias de presunto e 
+duas rodelas de carne de fraldinha.
+
+Sabendo que cada fatia de queijo pesa 30 gramas, a fatia de peito de peru pesa 25 gramas, 
+e que a rodela de carne de fraldinha pesa 120 gramas.
+
+Q3.
+Você foi contratado para desenvolver um programa em Python. Para Calcular e imprimir:
+- quantidade de votos válidos para cada candidato da legenda;
+- quantidade de votos nulos;
+- quantidade de votos em branco;
+- percentual de votos válidos de cada candidato.
+
+Um candidato a presidência da república deseja saber a intenção de votos de uma determinada região.
+Existem três candidatos favoritos a ganhar a eleição. 
+
+Os votos de legenda serão informados através de códigos. 
+
+Utilize os seguintes dados para a contagem dos votos, conforme codificação abaixo:
+- 13, 22, 17 = voto de legenda para os respectivos candidatos;
+- 0 = voto nulo;
+- 1 = voto em branco;
+
+Finalize o pleito de votação, quando for informado o voto -1.
+
+Q4. Dada uma lista com 10 elementos inteiros. 
+Você foi contratado para desenvolver um programa em Python que imprima 
+quantos elementos desta lista são números perfeitos.
+
+Nota: Um número se diz perfeito se é igual à soma de seus divisores próprios. 
+      Divisores próprios de um número positivo N são todos os divisores inteiros positivos de N exceto o próprio N.
+
+Q5.
+Você foi contratado para fazer um programa em Python que informe duas matrizes do mesmo tamanho (Ordem 3):
+
+a) calcule a norma de cada uma das matrizes, informe qual a matriz tem a maior
+norma;
+b) calcule a matriz soma das duas matrizes
+
+Nota: A norma de uma matriz é a raiz quadrada da soma de seus elementos;
+      A matriz soma é a soma de cada elemento.
