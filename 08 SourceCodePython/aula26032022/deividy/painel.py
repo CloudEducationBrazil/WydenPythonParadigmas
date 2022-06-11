@@ -11,6 +11,7 @@ conn = mysql.connector.connect(
 cursor = conn.cursor()
 
 print('ATENÇÃO --- RESPONDA SOMENTE COM "sim" OU "nao" ')
+
 comando = f'SELECT * FROM vendas'
 cursor.execute(comando)
 resultado = cursor.fetchall()

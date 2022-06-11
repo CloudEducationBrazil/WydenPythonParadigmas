@@ -6,7 +6,6 @@ conexao = mysql.connector.connect(
     password='12',
     database='bdcrud',
 )
-cursor = conexao.cursor()
 
 # CRUD
 
@@ -14,6 +13,7 @@ cursor = conexao.cursor()
 nome = "João Vítor Pamponet Esteves"
 matricula = 1
 comando = f'INSERT INTO alunos (nome, matricula) VALUES ("{nome}", {matricula})'
+cursor = conexao.cursor()
 cursor.execute(comando)
 conexao.commit()
 
