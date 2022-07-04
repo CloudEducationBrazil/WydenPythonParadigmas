@@ -1,5 +1,5 @@
 lista = [];
-soma = 0;
+soma = 0.00;
 
 def inputLista():
     for i in range(3):
