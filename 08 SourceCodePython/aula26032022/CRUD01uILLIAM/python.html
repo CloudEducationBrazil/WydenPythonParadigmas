@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programa em Python</title>
+  </head>
+  <!-- https://brython.info/ -->
+  <!-- https://www.google.com/search?q=os+tr%C3%AAs+prinicpais+frameworks+para+python&oq=os+tr%C3%AAs+prinicpais+frameworks+para+python&aqs=chrome..69i57.12295j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_ourzYonQNIOJ1sQPlLiD2As4 -->
+  <!-- https://imasters.com.br/back-end/flask-x-django-como-escolher-o-framework-correto-para-seu-aplicativo-web -->
+  <!-- https://blog.geekhunter.com.br/os-5-melhores-frameworks-de-python/ -->
+  <body onload="brython()">
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/brython"
+    ></script>
+    <script type="text/python">
+      from browser import document
+      from browser.html import H1, P, INPUT, LABEL
+
+      h1 = H1('Olá Mundo!!!')
+      document <= h1
+
+      p = P("Parágrafo em Python")
+      document <= p
+
+      label = LABEL('seu nome', For = 'nome')
+      input = INPUT(id = 'nome')
+
+      document['meu-forme'] <= label
+      document['meu-forme'] <= input
+    </script>
+    <form id="meu-forme" action="#" method="get"></form>
+  </body>
+</html>
