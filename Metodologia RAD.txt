@@ -1,8 +1,0 @@
-- Desenvolvimento RAD
-https://blog.cronapp.io/como-aplicar-o-rad-no-desenvolvimento-de-softwares/
-https://www.korp.com.br/rad-voce-sabe-como-funciona-o-desenvolvimento-agil-de-aplicacoes/
-https://blog.betrybe.com/tecnologia/rad/
-https://www.treinaweb.com.br/blog/o-que-e-rad-rapid-application-development
-
-- Métodos Ágeis
-https://blog.smartconsulting.com.br/metodologias-ageis/

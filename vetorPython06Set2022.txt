@@ -1,0 +1,51 @@
+import os 
+import time
+
+listaMat  = []
+listaNome = []
+
+def validaMatricula():
+   if ( mat in listaMat ):
+      print("matricula já existe")
+      return True
+
+   return False
+
+StatusMat = True
+while StatusMat:
+  mat = input("Matricula: ");
+  StatusMat = validaMatricula()
+  
+nome = input("Nome: ");
+
+listaMat.append(mat);
+listaNome.append(nome);
+
+StatusMat = True
+while StatusMat:
+  mat = input("Matricula: ");
+  StatusMat = validaMatricula()
+
+nome = input("Nome: ");
+
+listaMat.append(mat);
+listaNome.append(nome);
+
+StatusMat = True
+while StatusMat:
+  mat = input("Matricula: ");
+  StatusMat = validaMatricula()
+
+nome = input("Nome: ");
+
+listaMat.append(mat);
+listaNome.append(nome);
+
+os.system("clear")
+
+listaMat.pop(0);
+listaNome.pop(0);
+
+
+print (listaMat)
+print (listaNome)
