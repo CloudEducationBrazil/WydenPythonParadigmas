@@ -7,4 +7,4 @@ print (lista)
 
 # lista2[:] = ( value for value in range(0,20,2))
 # lista2 = ( [value for value in range(0,20,2)])
-# print(lista2)
+# print(lista2) 
