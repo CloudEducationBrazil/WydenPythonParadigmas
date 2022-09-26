@@ -187,9 +187,10 @@ if qtd_pessoas_pesq > 0:
    print('\n Maior salário da pop: ', maior_sal)
    print('Percentual de pessoas sal até $100: ', per_pes_sal_100)
 else:
-   print('\n Primeiro salário informado foi negativo')
+   print('\n Pesquisa encerrada!!!')
    
 # Para testar imprimimos a posição 1 do array
-print(listaNome[1])   
-print(listaSal[1])   
-print(listanFilhos[1])   
+if len(listaNome) > 0:
+   print(listaNome[1])   
+   print(listaSal[1])   
+   print(listanFilhos[1])   
