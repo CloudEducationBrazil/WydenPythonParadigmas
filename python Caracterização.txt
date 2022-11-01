@@ -1,0 +1,24 @@
+0. Interpretada
+
+1. Paradigma de programação
+1.1. Orientada a objetos
+1.2. Funcional
+1.3. Procedural
+1.4. Imperativa
+
+2. Projeto de Pesquisa Científica
+3. Data Sciense
+4. Jogos 
+5. Pequenos app
+
+6. Vantagens
+6.1. Alto nível
+6.2. Sintaxe básica / escrita fácil
+
+7. Desvantagens
+7.1. Díficil debug por conta das variaveis do tipo string sem definir tipo
+7.2. Tipagem forte ou fraca?
+
+8. Trades off
+
+9. Memória x desempenho
