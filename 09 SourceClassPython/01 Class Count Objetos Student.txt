@@ -1,0 +1,10 @@
+class Student:
+    count = 0
+    def __init__(self):
+        Student.count += 1;
+
+emp1 = Student()
+emp2 = Student()
+emp3 = Student()
+
+print(Student.count)
