@@ -1,6 +1,7 @@
 import mysql.connector
 from mysql.connector import Error
 
+con = None
 # tratamento d exceção = erro
 try:
     # Parametros de conexao com o BD
@@ -43,7 +44,8 @@ except Error as e:
     print('Error:', e)
 finally:
     # Verifica se o BD está conectado
-    if (con.is_connected()):
-        cursor.close()
-        con.close()
-        print('\nConexão encerrada com o MySQL')
+    if con != None:
+        if (con.is_connected()):
+            cursor.close()
+            con.close()
+            print('\nConexão encerrada com o MySQL')
