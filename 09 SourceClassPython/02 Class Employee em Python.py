@@ -8,4 +8,4 @@ emp1 = Employee(1, 'Julia')
 emp2 = Employee(2, 'Josy')
 
 emp1.display()
-emp2.display
+emp2.display()
