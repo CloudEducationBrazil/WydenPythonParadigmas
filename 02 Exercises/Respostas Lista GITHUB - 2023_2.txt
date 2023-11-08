@@ -1,0 +1,11 @@
+-- Pedro Lantyer Sacramento
+https://github.com/PedroLantyer/Uniruy-Listas-Paradigmas-Python
+
+-- Isadora Moura
+https://github.com/isamouraSB/Listas_Python
+
+-- Icaro Santana
+https://github.com/EdmBello/Listas
+
+-- Bruno Sousa
+https://github.com/Sousabs/Lista-python
