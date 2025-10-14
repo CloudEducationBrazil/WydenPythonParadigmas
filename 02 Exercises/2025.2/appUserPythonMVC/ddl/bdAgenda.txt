@@ -1,0 +1,24 @@
+-- Cria o banco de dados
+CREATE DATABASE IF NOT EXISTS agendaDB
+    DEFAULT CHARACTER SET utf8mb4
+    DEFAULT COLLATE utf8mb4_general_ci;
+
+-- Usa o banco
+USE agendaDB;
+
+-- Cria a tabela de usuários
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    idade INT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- MYSQL Antes de 8.0
+-- CREATE USER 'pyuser'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
+-- GRANT ALL PRIVILEGES ON agendadb.* TO 'pyuser'@'localhost';
+-- FLUSH PRIVILEGES;
+
+-- MYSQL Depois de 8.0
+-- CREATE USER 'pyuser'@'localhost' IDENTIFIED WITH caching_sha2_password BY '123456';
+-- GRANT ALL PRIVILEGES ON agendadb.* TO 'pyuser'@'localhost';
+-- FLUSH PRIVILEGES;

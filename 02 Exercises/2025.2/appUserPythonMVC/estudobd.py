@@ -1,0 +1,108 @@
+import mysql.connector
+import os
+
+def menu():
+    os.system('cls')
+
+    print("CRUD User: ") 
+    print("1 Exibir BD: ") 
+    print("2 Listar: ") 
+    print("3 Incluir: ") 
+    print("4 Alterar: ") 
+    print("5 Excluir: ") 
+    
+def mostrarDB():
+    cursor.execute("select database(); ")
+    linha = cursor.fetchone()
+    print("conectado ao banco de dados: ", linha)
+    
+def fecharConexao():
+    if conn.is_connected(): # testando se está conectado
+        cursor.close()
+        conn.close()
+        print("Conexão encerrada")
+
+def listarUsers():
+    sql = "select * from user"
+    cursor.execute(sql)
+    linha = cursor.fetchall()
+    print(linha)
+    
+def incluirUser():
+    nome  = input("Informe o nome: ")
+    idade = int(input("Informe idade: "))
+    
+    sql = "insert into user (nome, idade) values (%s, %s)"
+    valores = (nome, idade)
+
+    cursor.execute(sql, valores)
+    conn.commit()
+    print("Inserido com sucesso")
+
+def alterarUser():
+    id  = int(input("Informe o Id: "))
+
+    sql = "select * from user where id = %s"
+    valor = (id,)
+
+    cursor.execute(sql, valor)
+    linha = cursor.fetchone()
+    
+    if linha is not None:
+        print(f"\nUsuário encontrado: ID={linha[0]}, Nome={linha[1]}, Idade={linha[2]}")
+        
+        print("Para manter o dado pressione <ENTER>")
+        nome_input  = input("Informe o nome: ")
+        idade_input = input("Informe idade: ")
+        
+        # Mantém os valores antigos se o usuário não digitar nada
+        nome = nome_input if nome_input.strip() != "" else linha[1]
+        idade = int(idade_input) if idade_input.strip() != "" else linha[2]    
+
+        sql = "update user set nome = %s, idade = %s where id = %s"
+        valores = (nome, idade, id)
+
+        cursor.execute(sql, valores)
+        conn.commit() 
+        print("Alterado com sucesso")
+    else: 
+        print("User não encontrado")
+
+def excluirUser():
+    id  = int(input("Informe o Id: "))
+    
+    sql = "delete from user where id = %s"
+    valor = (id,)
+
+    cursor.execute(sql, valor)
+    conn.commit()
+    print("Excluído com sucesso")
+
+# Objeto de conexão
+conn = mysql.connector.connect(
+    host="localhost", database="agendadb", user="root", password="123456")
+if conn.is_connected():
+    print("conectado") # print(conn.get_server_info()) (versão)
+
+    cursor = conn.cursor()
+
+    op = ""
+    while op != "0":
+        menu()
+        op = input("Opção: ") 
+    
+        match op:
+            case "1": 
+                mostrarDB()
+            case "2": 
+                listarUsers()
+            case "3":
+                incluirUser()
+            case "4":
+                alterarUser()
+            case "5":
+                excluirUser()
+            case _: 
+                print("Opção Inválida")
+                
+        input("Pressione Enter para continuar...")
