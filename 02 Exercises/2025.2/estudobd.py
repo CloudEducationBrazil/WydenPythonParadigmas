@@ -46,9 +46,8 @@ def alterarUser():
     valor = (id,)
 
     cursor.execute(sql, valor)
-    linha = cursor.fetchone()
     
-    if linha is not None:
+    if cursor.rowcount > 0:
         print(f"\nUsuário encontrado: ID={linha[0]}, Nome={linha[1]}, Idade={linha[2]}")
         
         print("Para manter o dado pressione <ENTER>")
@@ -69,14 +68,35 @@ def alterarUser():
         print("User não encontrado")
 
 def excluirUser():
-    id  = int(input("Informe o Id: "))
-    
-    sql = "delete from user where id = %s"
-    valor = (id,)
+    try:
+        id = int(input("Informe o Id: "))
 
-    cursor.execute(sql, valor)
-    conn.commit()
-    print("Excluído com sucesso")
+        # Verifica se o ID existe antes de excluir
+        cursor.execute("SELECT nome, idade FROM user WHERE id = %s", (id,))
+        usuario = cursor.fetchone()
+
+        if usuario is None:
+            print("Código não encontrado.")
+            return
+        
+        print(f"\nUsuário encontrado: {usuario[0]} ({usuario[1]} anos)")
+        confirmar = input("Deseja realmente excluir este usuário? (S/N): ").strip().upper()
+
+        if confirmar != "S":
+            print("Exclusão cancelada pelo usuário.")
+            return
+
+        # Executa a exclusão
+        cursor.execute("DELETE FROM user WHERE id = %s", (id,))
+        conn.commit()
+
+        print("Usuário excluído com sucesso!")
+
+    except ValueError:
+        print("ID inválido. Informe um número inteiro.")
+    except Exception as e:
+        conn.rollback()  # reverte qualquer alteração se der erro
+        print(f"Erro ao excluir usuário: {e}")
 
 # Objeto de conexão
 conn = mysql.connector.connect(
