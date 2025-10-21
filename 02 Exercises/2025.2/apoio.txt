@@ -1,0 +1,84 @@
+0. Configuração do Ambiente
+0.1. Instalar Python
+        https://www.python.org/downloads/
+Nota: where python
+0.2. Atualizar
+       python.exe -m pip install --upgrade pip
+0.3. Powershell do Windows
+0.3.1. Rodar como Administrador - Escolher S ou A
+           Set-ExecutionPolicy RemoteSigned
+0.3.2. dentro do vscode - Terminal Powershell
+           venv\Scripts\activate
+
+0.4. IDE
+        https://code.visualstudio.com/docs/setup/windows#_install-vs-code-on-windows
+
+2. Novo Projeto App Flask
+2.1. Criar e Ativar um Ambiente Virtual
+        python -m venv venv
+        venv\Scripts\activate
+2.2. pip install flask
+2.3. Criar 
+        2.3.1. Arquivo: run.py fora da pasta app, raiz do projeto 
+        2.3.2. Pasta app; 
+        2.3.3. Arquivos: __inti__.py e routes.py dentro da pasta app 
+        2.3.4. Pode Rodar via powershell, dentro do vscode
+                   flask --app app run OU RUN dentro do vscode
+
+3. Criar App Flask com cookiecutter padrão MVC
+3.1. pip install cookiecutter
+3.2. pip install flask flask-login flask-bcrypt flask-sqlalchemy
+3.3. cookiecutter https://github.com/cookiecutter-flask/cookiecutter-flask.git
+
+4. Criar App FastAPI
+4.0 Criar e Ativar um Ambiente Virtual
+      python -m venv venv
+      venv\Scripts\activate
+4.1. pip install fastapi uvicorn
+4.2. Criar arq. main.py na raiz do projeto
+from fastapi import FastAPI
+
+app = FastAPI()
+ 
+@app.get("/")
+    def read_root():
+          return {"message": "API FastAPI rodando com sucesso!"}
+
+4.3.Rodar 
+      uvicorn main:app --reload
+
+5. Connector MySQL caching_sha2_password
+5.0. Instalar Server MySQL - Escolher: Server + Workbench
+        https://dev.mysql.com/downloads/installer/
+5.1. python -m pip install mysql-connector-python
+5.2. python.exe -m pip install --upgrade mysql-connector-python
+Nota: Ou
+         Caminho Python\python.exe -m pip install --upgrade mysql-connector-python
+         Caminho Python\python.exe -m pip show mysql-connector-python
+5.3. Para não depender do MySQL no Path
+        pip install pymysql
+5.4. Testar Conexão MySQL pelo CMD
+        mysql -u root -p
+        ou Pressione Win + R => digite sysdm.cpl, para configurar PATH do MySQL
+5.5. Sem PATH MYSQL no Windows
+5.5.1. CMD
+           set PATH=%PATH%;C:\Program Files\MySQL\MySQL Server 8.0\bin
+5.5.2. PowerShell
+           setx PATH "%PATH%;C:\Program Files\MySQL\MySQL Server 8.0\bin"
+
+6. Rodar App Users Exemplo
+6.1. pip install -r requirements.txt
+
+7.0. VSCode
+7.1. Propriedades Settings JSON
+       "code-runner.executorMap":
+       "python": "powershell -Command \"& 'C:\\Users\\heleno\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe' -u\"",
+7.2. Dentro do VsCode - no terminal PowerShell
+       $env:PATH += ";C:\Program Files\MySQL\MySQL Server 8.0\bin"
+
+8. Padrão VMC
+8.1. Models: User
+8.2. Repositories: acesso ao banco MySQL
+8.3. Services: regras de negócio
+8.4. Controllers: rotas Flask
+8.5. Views: template simples com HTML
