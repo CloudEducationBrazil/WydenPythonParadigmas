@@ -4,19 +4,25 @@
 Nota: where python
 0.2. Atualizar
        python.exe -m pip install --upgrade pip
-0.3. Powershell do Windows
+0.3. Powershell do WindowsSet-ExecutionPolicy RemoteSigned
 0.3.1. Rodar como Administrador - Escolher S ou A
            Set-ExecutionPolicy RemoteSigned
 0.3.2. dentro do vscode - Terminal Powershell
            venv\Scripts\activate
 
-0.4. IDE
+1. IDE VSCode
         https://code.visualstudio.com/docs/setup/windows#_install-vs-code-on-windows
+1.1. File->Preferences-> Settings = settings.json
+         "code-runner.executorMap": {
+//        "python": "powershell -Command \" & 'C:\\Users\\heleno\\AppData\\Local\\Programs\\Python\\Python314\\python.exe' -u\"",
+          "python": "& \"D:/projetosWeb/appUserPythonMVC/venv/Scripts/python.exe\" -u",
+        },
 
 2. Novo Projeto App Flask
 2.1. Criar e Ativar um Ambiente Virtual
         python -m venv venv
         venv\Scripts\activate
+        & D:/projetosWeb/appUserPythonMVC/venv/Scripts/Activate.ps1 
 2.2. pip install flask
 2.3. Criar 
         2.3.1. Arquivo: run.py fora da pasta app, raiz do projeto 
@@ -67,7 +73,9 @@ Nota: Ou
            setx PATH "%PATH%;C:\Program Files\MySQL\MySQL Server 8.0\bin"
 
 6. Rodar App Users Exemplo
-6.1. pip install -r requirements.txt
+6.1. pip install -r requirements.txt OU
+       pip install Flask==3.1.2 Flask-MySQLdb==1.0.1 SQLAlchemy==2.0.22 Flask-SQLAlchemy
+       pip install Flask-SQLAlchemy
 
 7.0. VSCode
 7.1. Propriedades Settings JSON

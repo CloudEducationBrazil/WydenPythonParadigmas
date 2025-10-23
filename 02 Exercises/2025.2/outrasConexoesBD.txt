@@ -1,0 +1,42 @@
+-- PostGreSQL
+pip install psycopg2-binary
+pip show psycopg2-binary
+pip list
+
+No arquivo requirements.txt
+Flask-SQLAlchemy==3.1.1
+psycopg2-binary==2.9.11
+
+Nota Sai da Versão MySQ:Flask-MySQLdb==1.0.1
+
+pip install -r requirements.txt
+
+SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://usuario:senha@localhost:5432/agendadb'
+class Config:
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:1@localhost:5432/agendadb'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+exemplo: postgresql+psycopg2://<usuario>:<senha>@<host>:<porta>/<nome_do_banco>
+
+usuário: postgres
+senha: 123456
+host: localhost
+porta: 5432 (padrão do PostgreSQL)
+banco: agendadb
+
+Variáveis de ambiente:
+
+import os
+class Config:
+    SQLALCHEMY_DATABASE_URI = os.getenv(
+        'DATABASE_URL',
+        'postgresql+psycopg2://postgres:123456@localhost:5432/agendadb'
+    )
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+export DATABASE_URL=postgresql+psycopg2://postgres:123456@localhost:5432/agendadb
+
+-- MySQL
+class Config:
+    SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:123456@localhost:3306/agendadb'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
