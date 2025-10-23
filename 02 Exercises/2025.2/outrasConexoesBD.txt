@@ -1,13 +1,21 @@
+-- app rodando no provedor Railway
+https://appuserpython-production.up.railway.app/
+
 -- PostGreSQL
 pip install psycopg2-binary
 pip show psycopg2-binary
 pip list
 
 No arquivo requirements.txt
+Flask==3.0.3
 Flask-SQLAlchemy==3.1.1
+SQLAlchemy==2.0.25
 psycopg2-binary==2.9.11
+gunicorn==22.0.0
+python-dotenv==1.0.1
 
-Nota Sai da Versão MySQ:Flask-MySQLdb==1.0.1
+
+Nota MySQL: mysql-connector-python==9.0.0
 
 pip install -r requirements.txt
 
@@ -27,14 +35,23 @@ banco: agendadb
 Variáveis de ambiente:
 
 import os
+
 class Config:
-    SQLALCHEMY_DATABASE_URI = os.getenv(
+    # Railway fornece DATABASE_URL (às vezes no formato postgres://)
+    database_url = os.getenv(
         'DATABASE_URL',
         'postgresql+psycopg2://postgres:123456@localhost:5432/agendadb'
     )
+
+    # Corrige prefixo "postgres://" (Railway usa isso)
+    if database_url.startswith("postgres://"):
+        database_url = database_url.replace("postgres://", "postgresql://", 1)
+
+    SQLALCHEMY_DATABASE_URI = database_url
+
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-export DATABASE_URL=postgresql+psycopg2://postgres:123456@localhost:5432/agendadb
+//export DATABASE_URL=postgresql+psycopg2://postgres:123456@localhost:5432/agendadb
 
 -- MySQL
 class Config:

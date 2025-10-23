@@ -20,7 +20,7 @@ Nota: where python
 
 2. Novo Projeto App Flask
 2.1. Criar e Ativar um Ambiente Virtual
-        python -m venv venv
+        python -m venv venv ou python -m venv /app/.env
         venv\Scripts\activate
         & D:/projetosWeb/appUserPythonMVC/venv/Scripts/Activate.ps1 
 2.2. pip install flask
